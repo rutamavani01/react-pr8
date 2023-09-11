@@ -4,22 +4,18 @@ import { useState, useEffect } from 'react';
 
 const Main = () => {
     
-    let all = localStorage.getItem('crud') ? JSON.parse(localStorage.getItem('crud')) : [];
     const [catagory, setCatagory] = useState('all');
     const [search,setSearch] = useState('');
+    const [filter,setFilter]= useState([]);
+    
+    useEffect(()=>{
+            let filterData = catagory === 'all' ? Data : Data.filter(item => item.catagory === catagory);
 
-    const handleShow = (catagory) => {
-        setCatagory(catagory);
-    }
-
-    const filterData = catagory === 'all' ? Data : Data.filter(v => v.catagory === catagory);
-   
-        useEffect(()=>{
-            let namesearch = all.filter((item) => {
-                return item && item.name && item.name.includes(search); 
-            });
-            setCatagory(namesearch);
-        },[search])  ;
+            let namesearch = filterData.filter((item) => {
+                return item.name.toLowerCase().includes(search.toLowerCase())
+            })
+            setFilter(namesearch);
+        },[catagory,search])  ;
 
     return (
         <center>
@@ -30,7 +26,7 @@ const Main = () => {
                             <h1 className='text-white'> <img src="./image/amazon-prime.jpg" alt="" /></h1>
                         </div>
                         <div className="w-33 fw-bolder">
-                            Search : <input type="text" onChange={ (e) => setSearch(e.target.value) } value={search} 
+                            Search : <input type="text" onChange={ (e) => setSearch(e.target.value) } value={search} placeholder='Enter movie name'
                             />
                         </div>
                         <div className="w-33 ">
@@ -42,28 +38,28 @@ const Main = () => {
             <section>
                 <div className="container">
                     <div className="d-flex justify-content-between my-5">
-                        <button className="btn btn-outline-danger rounded-pill" onClick={() => handleShow('trending')}>Trending</button>
-                        <button className="btn btn-outline-warning rounded-pill" onClick={() => handleShow('latest')}>Latest</button>
-                        <button className="btn btn-outline-info rounded-pill" onClick={() => handleShow('action')}>Action</button>
-                        <button className="btn btn-outline-info rounded-pill" onClick={() => handleShow('horror')}>Horror</button>
-                        <button className="btn btn-outline-info rounded-pill" onClick={() => handleShow('documentry')}>Documentry</button>
-                        <button className="btn btn-outline-info rounded-pill" onClick={() => handleShow('drama')}>Drama</button>
+                        <button className="btn btn-outline-danger rounded-pill" onClick={() => setCatagory('trending')}>Trending</button>
+                        <button className="btn btn-outline-warning rounded-pill" onClick={() => setCatagory('latest')}>Latest</button>
+                        <button className="btn btn-outline-info rounded-pill" onClick={() => setCatagory('action')}>Action</button>
+                        <button className="btn btn-outline-info rounded-pill" onClick={() => setCatagory('horror')}>Horror</button>
+                        <button className="btn btn-outline-info rounded-pill" onClick={() => setCatagory('documentry')}>Documentry</button>
+                        <button className="btn btn-outline-info rounded-pill" onClick={() => setCatagory('drama')}>Drama</button>
                     </div>
                     <div className="d-flex justify-content-evenly">
-                        <button className="btn btn-outline-info rounded-pill" onClick={() => handleShow('science fiction')}>Science Fiction</button>
-                        <button className="btn btn-outline-info rounded-pill" onClick={() => handleShow('mystry')}>Mystry</button>
-                        <button className="btn btn-outline-info rounded-pill" onClick={() => handleShow('disaster')}>Disaster</button>
-                        <button className="btn btn-outline-success rounded-pill" onClick={() => handleShow('adventure')}>Adventure</button>
-                        <button className="btn btn-outline-info rounded-pill" onClick={() => handleShow('animation')}>Animation</button>
-                        <button className="btn btn-outline-info rounded-pill" onClick={() => handleShow('thriller')}>Thriller</button> 
-                        <button className="btn btn-outline-info rounded-pill" onClick={() => handleShow('all')}>All</button>
+                        <button className="btn btn-outline-info rounded-pill" onClick={() => setCatagory('science fiction')}>Science Fiction</button>
+                        <button className="btn btn-outline-info rounded-pill" onClick={() => setCatagory('mystry')}>Mystry</button>
+                        <button className="btn btn-outline-info rounded-pill" onClick={() => setCatagory('disaster')}>Disaster</button>
+                        <button className="btn btn-outline-success rounded-pill" onClick={() => setCatagory('adventure')}>Adventure</button>
+                        <button className="btn btn-outline-info rounded-pill" onClick={() => setCatagory('animation')}>Animation</button>
+                        <button className="btn btn-outline-info rounded-pill" onClick={() => setCatagory('thriller')}>Thriller</button> 
+                        <button className="btn btn-outline-info rounded-pill" onClick={() => setCatagory('all')}>All</button>
                     </div>
                 </div>
             </section>
 
             <div className='container mt-5'>
                 <div className='row'>
-                    {filterData.map((item) => {
+                    {filter.map((item) => {
                         const { name, price, catagory, image } = item;
                         return (
                             <div className="card bg-dark text-white">
