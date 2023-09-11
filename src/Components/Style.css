@@ -1,3 +1,41 @@
 body{
     background-color: black;
 }
+header{
+    text-align: center;
+    background-color: #03479100;
+    background-attachment: fixed;
+}
+header img{
+    object-fit: cover !important;
+    width: 250px;
+    height: 70px;
+}
+input{
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+.card{
+    width: 24%!important;
+    margin: 10px auto;
+    padding: 10px 20px !important;
+    text-align: left !important;
+    background-color: rgba(253, 253, 253, 0.139) !important;
+    box-shadow: 0 4px 6px rgba(184, 182, 182, 0.3); 
+  }
+  .btn{
+    padding: 5px 25px!important;
+    font-size: 18px!important;
+  }
+  .btn:hover{
+    background-color: #0056b3;
+    border: 1px solid black;
+  }
+  .card-title{
+    text-transform: uppercase !important;
+  }
+
+  .card-img {    
+    height: 300px;     
+    object-fit: cover !important;
+  }

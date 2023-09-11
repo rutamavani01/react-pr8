@@ -1,9 +1,9 @@
 const Data = [
     {
-        name: 'star wars',
-        image :'./image/desktop-wallpaper-killian-eng-s-new-star-wars-poster-star-wars-movie-poster-thumbnail.jpg',
+        name: 'pachino',
+        image :'./image/images (4).jpeg',
         price: "$12",
-        catagory: 'trending'
+        catagory: 'thriller'
     },
     {
         name: 'new moon',
@@ -39,11 +39,30 @@ const Data = [
         name: 'Hollywood banker',
         image :'./image/download (3).jpeg',
         price: "$12",
-        catagory: 'science finction'
+        catagory: 'science fiction'
+    },
+    {
+        name: 'Hollywood banker',
+        image :'./image/download (3).jpeg',
+        price: "$12",
+        catagory: 'trending'
+    },
+    {
+        name: 'new moon',
+        image :'./image/desktop-wallpaper-new-moon-poster-003-posters-and-twilight-new-moon-movies-thumbnail.jpg',
+        price: "$12",
+        catagory: 'trending'
     },
     {
         name: 'Encanto',
         image :'./image/download (4).jpeg',
+        price: "$12",
+        catagory: 'drama'
+    },
+    
+    {
+        name: 'star wars',
+        image :'./image/desktop-wallpaper-killian-eng-s-new-star-wars-poster-star-wars-movie-poster-thumbnail.jpg',
         price: "$12",
         catagory: 'drama'
     },
@@ -52,6 +71,24 @@ const Data = [
         image :'./image/download (5).jpeg',
         price: "$12",
         catagory: 'drama'
+    },
+    {
+        name: 'Encanto',
+        image :'./image/download (4).jpeg',
+        price: "$12",
+        catagory: 'latest'
+    },
+    {
+        name: 'the mist',
+        image :'./image/download (1).jpeg',
+        price: "$12",
+        catagory: 'trending'
+    },
+    {
+        name: 'goblin',
+        image :'./image/download (5).jpeg',
+        price: "$12",
+        catagory: 'latest'
     },
     {
         name: 'stork',
@@ -78,16 +115,29 @@ const Data = [
         catagory: 'mystry'
     },
     {
+        name: 'Encanto',
+        image :'./image/download (4).jpeg',
+        price: "$12",
+        catagory: 'action'
+    },
+    {
         name: 'the conjuring',
         image :'./image/download (3).jpeg',
         price: "$12",
-        catagory: 'disaster'
+        catagory: 'action'
     },
     {
         name: 'Encanto',
         image :'./image/download (4).jpeg',
         price: "$12",
         catagory: 'adventure'
+    },
+    
+    {
+        name: 'curse of nun',
+        image :'./image/download (2).jpeg',
+        price: "$12",
+        catagory: 'trending'
     },
     {
         name: 'goblin',
@@ -99,7 +149,7 @@ const Data = [
         name: 'the vanila sky',
         image :'./image/images (1).jpeg',
         price: "$12",
-        catagory: 'animation'
+        catagory: 'thriller'
     },
     {
         name: 'another earth',
@@ -109,21 +159,28 @@ const Data = [
     },
     {
         name: 'the conjuring',
-        image :'./image/images (1).jpeg',
+        image :'./image/images (3).jpeg',
         price: "$12",
         catagory: 'disaster'
     },
     {
         name: 'Encanto',
-        image :'./image/images (1).jpeg',
+        image :'./image/images (6).jpeg',
         price: "$12",
         catagory: 'adventure'
     },
     {
-        name: 'goblin',
-        image :'./image/images (1).jpeg',
+        name: 'pachino',
+        image :'./image/images (4).jpeg',
         price: "$12",
         catagory: 'thriller'
     },
+    {
+        name: 'the conjuring',
+        image :'./image/download (3).jpeg',
+        price: "$12",
+        catagory: 'disaster'
+    },
 
 ]
+export default Data;
